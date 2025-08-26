@@ -1,0 +1,336 @@
+/* 1. FONT IMPORTS & GLOBAL VARIABLES */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Playfair+Display:wght@700&display=swap');
+
+:root {
+    --bg-color: #1A1A1A;
+    --text-color: #E0E0E0;
+    --primary-accent: #007BFF; /* Electric Blue - can be changed */
+    --secondary-bg: #2C2C2C;
+    --font-sans: 'Inter', sans-serif;
+    --font-serif: 'Playfair Display', serif;
+}
+
+
+/* 2. BASIC CSS RESET & SMOOTH SCROLL */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+/* 3. GLOBAL BODY STYLES */
+body {
+    font-family: var(--font-sans);
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+h1, h2, h3 {
+    font-family: var(--font-serif);
+    color: #FFFFFF;
+}
+
+a {
+    color: var(--primary-accent);
+    text-decoration: none;
+}
+
+/* 4. SHARED STYLES & LAYOUT */
+main {
+    width: 100%;
+    max-width: 900px; /* Controls the max width of the main content */
+    margin: 0 auto; /* Centers the main content block */
+    padding: 0 20px;
+}
+
+section {
+    padding: 80px 0; /* Adds vertical spacing between sections */
+    border-bottom: 1px solid var(--secondary-bg); /* Subtle line between sections */
+}
+
+section h2 {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+
+/* 5. HERO SECTION STYLES */
+/* ORIGINAL HERO SECTION STYLES */
+.hero-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 100vh;
+  padding: 0 20px;
+}
+
+.hero-content h1 {
+    font-size: 3.5rem;
+    margin-bottom: 10px;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin-bottom: 30px;
+}
+
+.cta-button {
+    display: inline-block;
+    background-color: var(--primary-accent);
+    color: #FFFFFF;
+    padding: 12px 24px;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #0056b3; /* A darker shade of the accent color */
+}
+
+
+/* 6. PROJECTS & SKILLS SECTION STYLES */
+.project-grid, .skills-grid {
+    display: grid;
+    gap: 20px;
+}
+
+/* Placeholder styles for the project cards */
+.project-card-placeholder {
+    background-color: var(--secondary-bg);
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.skills-grid p {
+    text-align: center;
+    font-style: italic;
+    opacity: 0.7;
+}
+
+
+/* 7. FOOTER (CONTACT SECTION) STYLES */
+.contact-section {
+    text-align: center;
+    padding: 60px 20px;
+    border: none; /* No border for the last section */
+}
+
+.contact-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.contact-section p {
+    margin-bottom: 30px;
+}
+
+.social-links a {
+    margin: 0 15px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: #FFFFFF;
+}
+
+/* STYLES FOR DYNAMIC PROJECT CARDS */
+.project-card {
+  background-color: var(--secondary-bg);
+  padding: 25px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  height: 100%;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.project-card h3 a {
+  color: #FFFFFF;
+  font-family: var(--font-sans);
+  font-size: 1.3rem;
+  text-decoration: none;
+}
+
+.project-card h3 a:hover {
+  text-decoration: underline;
+}
+
+.project-description {
+  margin: 15px 0;
+  flex-grow: 1; /* Allows description to take up available space */
+  opacity: 0.8;
+}
+
+.project-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.9rem;
+}
+
+/* NEW STYLES FOR GITHUB-STYLE LANGUAGE BAR */
+.project-footer {
+  /* This ensures the star count and language bar are spaced out */
+  align-items: center;
+}
+
+.language-bar {
+  display: flex;
+  width: 80%; /* Takes up most of the footer width */
+  height: 10px;
+  border-radius: 5px;
+  overflow: hidden; /* Ensures the segments stay within the rounded corners */
+  margin-right: 15px; /* Adds space between the bar and the star count */
+}
+
+.language-segment {
+  height: 100%;
+}
+
+/* UPDATED STYLES FOR LANGUAGE BAR AND NEW LEGEND */
+.project-card {
+  /* This ensures the footer (star count) stays at the bottom */
+  justify-content: flex-start; 
+}
+
+.language-stats {
+  margin-top: auto; /* Pushes stats to the bottom of the card's flexible space */
+  padding-top: 15px;
+}
+
+.language-bar {
+  width: 45%; /* Resized to be less than half the width */
+  margin-bottom: 10px; /* Adds space between the bar and the legend */
+}
+
+.language-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px; /* Adds space between legend items */
+  font-size: 0.8rem;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+}
+
+.legend-color-dot {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin-right: 5px;
+}
+
+.legend-percentage {
+  opacity: 0.7;
+  margin-left: 5px;
+}
+
+/* We only need one footer rule now */
+.project-footer {
+  margin-top: 15px;
+}
+/* NEW STYLES FOR GITHUB TOPICS AND LAYOUT ADJUSTMENTS */
+.project-topics {
+  margin-top: 15px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.topic-tag {
+  background-color: rgba(63, 137, 246, 0.15); /* Light blue background like GitHub */
+  color: #58a6ff; /* Blue text */
+  padding: 4px 12px;
+  border-radius: 16px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+}
+
+.topic-tag:hover {
+  background-color: rgba(63, 137, 246, 0.25);
+}
+
+/* Adjust project card layout to allow it to grow */
+.project-card {
+  justify-content: space-between; /* This will push the language stats to the bottom */
+  gap: 15px; /* Adds space between content blocks */
+}
+
+/* NEW STYLES FOR ANIMATED SKILL TAGS */
+.skills-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  text-align: center;
+}
+
+.skill-tag-wrapper {
+  /* This wrapper helps with the animation */
+  overflow: hidden; 
+}
+
+.skill-tag {
+  display: inline-block;
+  background-color: var(--secondary-bg);
+  color: var(--text-color);
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-weight: 500;
+  border: 1px solid #444;
+}
+/* STYLES FOR FRAMER MOTION SKILLS GRID */
+.skills-container {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.skill-category h3 {
+  font-family: var(--font-sans);
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+  color: var(--primary-accent);
+  border-bottom: 1px solid var(--secondary-bg);
+  padding-bottom: 10px;
+}
+
+.skills-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.skill-tag {
+  background-color: var(--secondary-bg);
+  color: var(--text-color);
+  padding: 10px 18px;
+  border-radius: 8px;
+  font-weight: 500;
+  border: 1px solid #444;
+  cursor: default; /* Change cursor to show it's not a button */
+}
