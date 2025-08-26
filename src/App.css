@@ -62,20 +62,107 @@ section h2 {
 
 
 /* 5. HERO SECTION STYLES */
-/* ORIGINAL HERO SECTION STYLES */
+/* NEW RECRUITER-FOCUSED HERO SECTION STYLES */
 .hero-section {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
   align-items: center;
-  text-align: center;
+  justify-content: center;
   height: 100vh;
-  padding: 0 20px;
+  padding: 0 5%;
 }
 
-.hero-content h1 {
-    font-size: 3.5rem;
-    margin-bottom: 10px;
+.hero-layout {
+  display: flex;
+  align-items: center;
+  gap: 60px;
+  max-width: 1100px;
+}
+
+.hero-text-content {
+  flex: 1;
+}
+
+.hero-text-content h1 {
+  font-size: 3.2rem;
+  line-height: 1.2;
+  margin-bottom: 20px;
+}
+
+.hero-subhead {
+  font-size: 1.1rem;
+  opacity: 0.8;
+  margin-bottom: 30px;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+.cta-button.primary {
+  background-color: var(--primary-accent);
+  color: #FFFFFF;
+}
+
+.cta-button.secondary {
+  background-color: transparent;
+  color: var(--text-color);
+  border: 1px solid var(--secondary-bg);
+}
+
+.cta-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* UPDATED STYLES FOR SOCIAL ICONS */
+.hero-socials {
+  display: flex;
+  align-items: center;
+  gap: 20px; /* Increased gap for icons */
+  margin-bottom: 30px;
+}
+
+.hero-socials a {
+  color: var(--text-color);
+  opacity: 0.7;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.hero-socials a:hover {
+  opacity: 1;
+  transform: translateY(-2px);
+}
+
+.hero-socials svg {
+  font-size: 28px; /* Control the size of the icons */
+}
+
+.hero-trust-badges {
+  display: flex;
+  gap: 10px;
+}
+
+.badge {
+  background-color: var(--secondary-bg);
+  color: var(--text-color);
+  padding: 5px 12px;
+  border-radius: 16px;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.hero-visual {
+  flex-shrink: 0;
+}
+
+.hero-visual img {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid var(--secondary-bg);
 }
 
 .hero-content p {
